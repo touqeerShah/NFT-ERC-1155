@@ -1,0 +1,51 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ICrops",
+  "sourceName": "contracts/Interfaces/ICrops.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "Crops__ArrayLengthZero",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "nftIndexes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantities",
+          "type": "uint256"
+        }
+      ],
+      "name": "Crops__InvalidArrayLenght",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "nftIndexes",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "quantities",
+          "type": "uint256"
+        }
+      ],
+      "name": "Init",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

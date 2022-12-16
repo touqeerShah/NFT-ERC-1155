@@ -1,0 +1,133 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "INFTFarm",
+  "sourceName": "contracts/Interfaces/INFTFarm.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "NFTFarm__InsufficientPoint",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ids",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totals",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "prices",
+          "type": "uint256"
+        }
+      ],
+      "name": "NFTFarm__InvalidArrayLenght",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "nftIndexes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantities",
+          "type": "uint256"
+        }
+      ],
+      "name": "NFTFarm__InvalidClamArrayLenght",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NFTFarm__NotEnoughCrops",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NFTFarm__StackAmountNotZero",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ids",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "totals",
+          "type": "uint256"
+        }
+      ],
+      "name": "AddNFTs",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "nftIndexes",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "quantities",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimNFTs",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "StakeTokens",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "pointsDebt",
+          "type": "uint256"
+        }
+      ],
+      "name": "UnstakeTokens",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

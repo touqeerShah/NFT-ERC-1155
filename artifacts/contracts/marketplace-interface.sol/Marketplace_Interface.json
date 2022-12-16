@@ -1,0 +1,528 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Marketplace_Interface",
+  "sourceName": "contracts/marketplace-interface.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__AllowedCryptoNotExist",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "PTNFTMarketPlace__AlreadyListed",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__FailToWithDrawAmount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__FixedPirceMarketItem",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__InsufficientApprovalFund",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__InsufficientFund",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "PTNFTMarketPlace__ItemIdInvalid",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__MarketItemExpired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__NFTContractAddressIsRequired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__NoAmountForWithDraw",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__NoOfferExist",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__NotAvailableForOffer",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__NotOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__OfferTimeExpired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__PermissionRequired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PTNFTMarketPlace__ValueShouldGreaterThenZero",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "offerAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address payable",
+          "name": "offerBy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum OfferState",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "AcceptOffer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "offerAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address payable",
+          "name": "offerBy",
+          "type": "address"
+        }
+      ],
+      "name": "BuyNFT",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "offerAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalOffers",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "startAt",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "expiresAt",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address payable",
+          "name": "offerBy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum OfferState",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "CreateOffer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "FallbackCalled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "minPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isFixedPrice",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "startAt",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "expiresAt",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum State",
+          "name": "state",
+          "type": "uint8"
+        }
+      ],
+      "name": "MarketItemCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum State",
+          "name": "state",
+          "type": "uint8"
+        }
+      ],
+      "name": "MarketItemDelete",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "ReceivedCalled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "offerAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address payable",
+          "name": "offerBy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum OfferState",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "RejectOffer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "itemSoldCounter",
+          "type": "uint256"
+        }
+      ],
+      "name": "TotalNumberOfItemMarketPlace",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "totalOfferOnMarketPlace",
+          "type": "uint256"
+        }
+      ],
+      "name": "TotalNumberOfOfferOnMarketPlace",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "offerBy",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "WithDrawAmount",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "offerAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address payable",
+          "name": "offerBy",
+          "type": "address"
+        }
+      ],
+      "name": "WithDrawFromOffer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "offerBy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "WithDrawRefundAmount",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
