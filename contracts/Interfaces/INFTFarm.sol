@@ -10,6 +10,8 @@ interface INFTFarm {
     error NFTFarm__StackAmountNotZero();
     error NFTFarm__NotEnoughCrops();
     error NFTFarm__InsufficientPoint();
+    error NFTFarm__TransferFail();
+
     error NFTFarm__InvalidClamArrayLenght(uint256 nftIndexes, uint256 quantities);
     error NFTFarm__InvalidArrayLenght(uint256 ids, uint256 totals, uint256 prices);
 }

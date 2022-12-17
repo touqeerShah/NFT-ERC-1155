@@ -1,9 +1,65 @@
-# Lazzing Minting NFT and Marketplace
+#  Minting ERC1155 NFT and Farming
+
+
+
+
+
+
+## Upgrade Contract 
+- Universal Upgradeable Proxy Contract (UUPC)
+```
+yarn add @openzeppelin/contracts-upgradeable
+npm i @openzeppelin/contracts-upgradeable
+npm i @openzeppelin/hardhat-upgrades --save
+```
+- Transparent Contract Stander
+- - It make contract upgrade umlimited is size, transparent and flexible      
+- - This is more expense when you deploy it because you save all function into transparent contract and point multiple contract
+- - It's allow to add remove multip function 
+```
+https://forum.openzeppelin.com/t/openzeppelin-upgrades-step-by-step-tutorial-for-hardhat/3580
+https://docs.openzeppelin.com/upgrades-plugins/1.x/
+https://github.com/wighawag/hardhat-deploy#deploying-and-upgrading-proxies
+https://github.com/wighawag/template-ethereum-contracts/tree/examples/openzeppelin-proxies/deploy
+```     
+
+
+## Fuzz Test Result
+chidna-test . --test-mode assertion --contract FarmTest   --config echidna.config.yml
+Analyzing contract: /code/contracts/test/FarmeTest.sol:FarmTest
+crops():  passed! 🎉
+farm():  passed! 🎉
+claimNFTs(uint256[],uint256[]):  passed! 🎉
+addNFTs(uint256[],uint256[],uint256[]):  passed! 🎉
+stakeTokens(uint256):  passed! 🎉
+unstakeTokens():  passed! 🎉
+token():  passed! 🎉
+AssertionFailed(..):  passed! 🎉
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 step 1 create folder
 step 2 install hardhat
 step 3 create empty project
 ster 4 install following dependency
+
+
 
 ```
 // javascript

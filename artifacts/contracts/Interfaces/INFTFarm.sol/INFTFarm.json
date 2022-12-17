@@ -56,6 +56,11 @@
       "type": "error"
     },
     {
+      "inputs": [],
+      "name": "NFTFarm__TransferFail",
+      "type": "error"
+    },
+    {
       "anonymous": false,
       "inputs": [
         {

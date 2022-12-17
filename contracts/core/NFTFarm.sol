@@ -52,8 +52,10 @@ contract NFTFarm is INFTFarm, Ownable, ERC1155Holder {
         if (_amount == 0) {
             revert NFTFarm__StackAmountNotZero();
         }
-        token.transferFrom(msg.sender, address(this), _amount);
-
+        bool result = token.transferFrom(msg.sender, address(this), _amount);
+        if (!result) {
+            revert NFTFarm__TransferFail();
+        }
         UserInfo storage user = userInfo[msg.sender];
 
         // already deposited before
@@ -67,18 +69,17 @@ contract NFTFarm is INFTFarm, Ownable, ERC1155Holder {
 
     // claim nfts if points threshold reached
     function claimNFTs(uint256[] calldata _nftIndexes, uint256[] calldata _quantities) external {
-        require(_nftIndexes.length == _quantities.length, "Incorrect array length");
-        if (_nftIndexes.length == _quantities.length) {
+        if (_nftIndexes.length != _quantities.length) {
             revert NFTFarm__InvalidClamArrayLenght(_nftIndexes.length, _quantities.length);
         }
         for (uint64 i = 0; i < _nftIndexes.length; i++) {
-            NFTInfo storage nft = nftInfo[_nftIndexes[i]];
+            NFTInfo memory nft = nftInfo[_nftIndexes[i]];
             uint256 cost = nft.price * _quantities[i];
             uint256 points = pointsBalance(msg.sender);
             if (nft.remaining < _quantities[i]) {
                 revert NFTFarm__NotEnoughCrops();
             }
-            if (points >= cost) {
+            if (points <= cost) {
                 revert NFTFarm__InsufficientPoint();
             }
             UserInfo memory user = userInfo[msg.sender];
@@ -98,8 +99,10 @@ contract NFTFarm is INFTFarm, Ownable, ERC1155Holder {
             revert NFTFarm__StackAmountNotZero();
         }
 
-        token.transfer(msg.sender, user.stakedAmount);
-
+        bool result = token.transfer(msg.sender, user.stakedAmount);
+        if (!result) {
+            revert NFTFarm__TransferFail();
+        }
         // update userInfo
         user.pointsDebt = pointsBalance(msg.sender);
         user.stakedAmount = 0;
